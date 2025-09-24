@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Types Example</title>
+
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Internal CSS -->
+    <style>
+        h2 {
+            color: purple;          /* selector: h2, property: color, value: purple */
+            text-decoration: underline;
+        }
+        .highlight {
+            background-color: yellow;   /* selector: .highlight, property: background-color, value: yellow */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- External CSS applied here -->
+    <h1>Welcome to CSS Demonstration</h1>
+
+    <!-- Internal CSS applied here -->
+    <h2>This is styled using Internal CSS</h2>
+    <p class="highlight">This paragraph uses a CSS class selector with internal style.</p>
+
+    <!-- Inline CSS applied here -->
+    <p style="color:red; font-size:20px;">
+        This paragraph is styled using <b>Inline CSS</b>.
+        <!-- selector: element itself, property: color, value: red -->
+    </p>
+
+</body>
+</html>
