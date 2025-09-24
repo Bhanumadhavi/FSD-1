@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frames Example Using Iframes</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+        }
+        iframe {
+            border: 2px solid black;
+            height: 100vh;
+        }
+        #frame1 { width: 30%; }
+        #frame2 { width: 40%; }
+        #frame3 { width: 30%; }
+    </style>
+</head>
+<body>
+    <!-- First frame: Image -->
+    <iframe id="frame1" src="image.html" name="frame1"></iframe>
+
+    <!-- Second frame: Paragraph -->
+    <iframe id="frame2" src="paragraph.html" name="frame2"></iframe>
+
+    <!-- Third frame: Link -->
+    <iframe id="frame3" src="link.html" name="frame3"></iframe>
+</body>
+</html>
