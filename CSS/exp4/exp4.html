@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Selector Forms Example</title>
+  <style>
+    h1 {
+      color: darkblue;
+      text-align: center;
+    }
+    #special {
+      color: crimson;
+      font-weight: bold;
+    }
+    .highlight {
+      background-color: yellow;
+    }
+    h2, p {
+      font-family: Arial, sans-serif;
+    }
+    * {
+      margin: 5px;
+    }
+    div p {
+      color: green;
+    }
+    div > span {
+      color: purple;
+    }
+    h2 + p {
+      color: orange;
+      font-style: italic;
+    }
+    h2 ~ ul {
+      border: 1px solid gray;
+      padding: 5px;
+    }
+    a:hover {
+      color: red;
+    }
+    li:first-child {
+      font-weight: bold;
+    }
+    input:focus {
+      border: 2px solid blue;
+    }
+    p::first-letter {
+      font-size: 24px;
+      color: brown;
+    }
+    p::after {
+      content: " [End of paragraph]";
+      color: gray;
+      font-size: small;
+    }
+    input[type="text"] {
+      background-color: #f0f8ff;
+    }
+    a[target="_blank"] {
+      text-decoration: underline;
+      color: teal;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS Selector Forms Demo</h1>
+
+  <h2 id="special">This is a heading with ID selector</h2>
+  <p class="highlight">This is a paragraph with a class selector applied.</p>
+
+  <div>
+    <p>This paragraph is inside a div (descendant selector).</p>
+    <span>This span is a direct child of div (child selector).</span>
+  </div>
+
+  <h2>Combinator Selector Demo</h2>
+  <p>This paragraph is adjacent sibling of h2.</p>
+  <ul>
+    <li>First list item (pseudo-class selector applied)</li>
+    <li>Second list item</li>
+  </ul>
+
+  <a href="https://example.com" target="_blank">External Link</a>
+  <br><br>
+  <input type="text" placeholder="Enter text here">
+  <input type="password" placeholder="Password">
+</body>
+</html>
