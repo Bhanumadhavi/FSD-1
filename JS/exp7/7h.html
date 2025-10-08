@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User-Defined Object Example</title>
+</head>
+<body>
+  <h1>User-Defined Object Demo</h1>
+  <script>
+    function Car(make, model, year) {
+      this.make = make;
+      this.model = model;
+      this.year = year;
+      this.display = function() {
+        return `${this.year} ${this.make} ${this.model}`;
+      };
+    }
+
+    let car1 = new Car("Toyota", "Camry", 2024);
+    let car2 = new Car("Tesla", "Model 3", 2025);
+
+    document.write("<b>Car 1:</b> " + car1.display() + "<br>");
+    document.write("<b>Car 2:</b> " + car2.display());
+  </script>
+</body>
+</html>

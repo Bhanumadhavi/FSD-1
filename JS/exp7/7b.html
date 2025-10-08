@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Window Object Example</title>
+  <style>
+    body {
+      font-family: Verdana, sans-serif;
+      background-color: #e6f2ff;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Window Object Demo</h1>
+  <button onclick="openWindow()">Open New Window</button>
+  <button onclick="closeWindow()">Close Window</button>
+
+  <p><strong>Window Width:</strong> <span id="width"></span></p>
+  <p><strong>Window Height:</strong> <span id="height"></span></p>
+
+  <script>
+    document.getElementById("width").innerText = window.innerWidth;
+    document.getElementById("height").innerText = window.innerHeight;
+
+    let newWin;
+    function openWindow() {
+      newWin = window.open("https://www.example.com", "_blank", "width=400,height=300");
+    }
+    function closeWindow() {
+      if (newWin) newWin.close();
+    }
+  </script>
+</body>
+</html>
