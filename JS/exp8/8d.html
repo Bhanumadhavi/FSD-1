@@ -1,0 +1,22 @@
+<script>
+let person = {name: "John", age: 25, city: "New York"};
+
+// for-in loop (for objects)
+document.write("For-in loop: <br>");
+for(let key in person){
+    document.write(key + ": " + person[key] + "<br>");
+}
+
+// forEach loop (for arrays)
+let arr = ["Apple", "Banana", "Cherry"];
+document.write("<br>ForEach loop: <br>");
+arr.forEach(function(item, index){
+    document.write(index + ": " + item + "<br>");
+});
+
+// for-of loop (for iterable arrays)
+document.write("<br>For-of loop: <br>");
+for(let fruit of arr){
+    document.write(fruit + "<br>");
+}
+</script>

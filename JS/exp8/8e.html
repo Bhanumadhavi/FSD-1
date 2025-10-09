@@ -1,0 +1,17 @@
+<script>
+let number = parseInt(prompt("Enter a number to check Armstrong:"));
+let sum = 0;
+let temp = number;
+
+while(temp > 0){
+    let digit = temp % 10;
+    sum += digit ** 3; // cube of digit
+    temp = Math.floor(temp / 10);
+}
+
+if(sum === number){
+    document.write(number + " is an Armstrong number");
+} else {
+    document.write(number + " is NOT an Armstrong number");
+}
+</script>

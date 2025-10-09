@@ -1,0 +1,13 @@
+<script>
+let amount = parseInt(prompt("Enter the amount:"));
+let denominations = [100, 50, 20, 10, 5, 2, 1];
+
+document.write("Denominations:<br>");
+for(let i = 0; i < denominations.length; i++){
+    let count = Math.floor(amount / denominations[i]);
+    if(count > 0){
+        document.write(count + " - " + denominations[i] + "'s<br>");
+        amount = amount % denominations[i];
+    }
+}
+</script>
