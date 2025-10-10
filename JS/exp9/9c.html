@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form Validation</title>
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value.trim();
+            let mobile = document.getElementById("mobile").value.trim();
+            let email = document.getElementById("email").value.trim();
+
+            // Name validation: starts with alphabet, alphanumeric, min 6 chars
+            let nameRegex = /^[A-Za-z][A-Za-z0-9]{5,}$/;
+            if (!nameRegex.test(name)) {
+                alert("Invalid Name! Must start with a letter, alphanumeric, minimum 6 characters.");
+                return false;
+            }
+
+            // Mobile validation: exactly 10 digits
+            let mobileRegex = /^\d{10}$/;
+            if (!mobileRegex.test(mobile)) {
+                alert("Invalid Mobile! Must contain exactly 10 digits.");
+                return false;
+            }
+
+            // Email validation: basic format xxxxx@xxxx.xxx
+            let emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+            if (!emailRegex.test(email)) {
+                alert("Invalid Email! Must be in format example@domain.com");
+                return false;
+            }
+
+            alert("Form Submitted Successfully!");
+            return true; // allow form submission
+        }
+    </script>
+</head>
+<body>
+    <h2>Registration Form</h2>
+
+    <form onsubmit="return validateForm()">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" placeholder="Enter Name"><br><br>
+
+        <label for="mobile">Mobile:</label><br>
+        <input type="text" id="mobile" placeholder="Enter Mobile Number"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" placeholder="Enter Email"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
