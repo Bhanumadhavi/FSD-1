@@ -1,22 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Object Loops</title>
+</head>
+<body>
+<h2>Print Object Data</h2>
+<button onclick="printObjectData()">Print Object</button>
+<p id="objectResult"></p>
+
 <script>
-let person = {name: "John", age: 25, city: "New York"};
+function printObjectData() {
+    const obj = {name: "Alice", age: 25, city: "Delhi"};
+    
+    // for-in
+    let forInResult = "";
+    for(let key in obj) {
+        forInResult += `${key}: ${obj[key]} <br>`;
+    }
 
-// for-in loop (for objects)
-document.write("For-in loop: <br>");
-for(let key in person){
-    document.write(key + ": " + person[key] + "<br>");
-}
+    // for-of
+    let forOfResult = "";
+    for(let [key, value] of Object.entries(obj)) {
+        forOfResult += `${key}: ${value} <br>`;
+    }
 
-// forEach loop (for arrays)
-let arr = ["Apple", "Banana", "Cherry"];
-document.write("<br>ForEach loop: <br>");
-arr.forEach(function(item, index){
-    document.write(index + ": " + item + "<br>");
-});
+    // forEach
+    let forEachResult = "";
+    Object.entries(obj).forEach(([key, value]) => {
+        forEachResult += `${key}: ${value} <br>`;
+    });
 
-// for-of loop (for iterable arrays)
-document.write("<br>For-of loop: <br>");
-for(let fruit of arr){
-    document.write(fruit + "<br>");
+    document.getElementById("objectResult").innerHTML =
+        `<strong>for-in:</strong><br>${forInResult}<br>
+         <strong>for-of:</strong><br>${forOfResult}<br>
+         <strong>forEach:</strong><br>${forEachResult}`;
 }
 </script>
+</body>
+</html>

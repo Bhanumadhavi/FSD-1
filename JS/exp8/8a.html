@@ -1,13 +1,31 @@
-<script>
-let num1 = parseInt(prompt("Enter first integer:"));
-let num2 = parseInt(prompt("Enter second integer:"));
-let num3 = parseInt(prompt("Enter third integer:"));
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Larger Number</title>
+</head>
+<body>
+<h2>Larger of Three Numbers</h2>
+<button onclick="findLarger()">Check Larger Number</button>
+<p id="largerResult"></p>
 
-if(num1 === num2 && num2 === num3) {
-    document.write("EQUAL NUMBERS");
-} else {
-    let largest = Math.max(num1, num2, num3);
-    alert(largest + " LARGER NUMBER");
-    document.write("Largest Number: " + largest);
+<script>
+function findLarger() {
+    let num1 = parseInt(prompt("Enter first integer:"));
+    let num2 = parseInt(prompt("Enter second integer:"));
+    let num3 = parseInt(prompt("Enter third integer:"));
+    let result = "";
+
+    if(num1 === num2 && num2 === num3) {
+        result = "EQUAL NUMBERS";
+    } else {
+        let larger = Math.max(num1, num2, num3);
+        result = larger + " LARGER NUMBER";
+    }
+
+    document.getElementById("largerResult").innerHTML = result;
+    alert(result);
 }
 </script>
+</body>
+</html>

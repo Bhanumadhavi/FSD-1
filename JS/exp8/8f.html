@@ -1,13 +1,30 @@
-<script>
-let amount = parseInt(prompt("Enter the amount:"));
-let denominations = [100, 50, 20, 10, 5, 2, 1];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Denomination</title>
+</head>
+<body>
+<h2>Bank Amount Denomination</h2>
+<button onclick="calculateDenomination()">Calculate Denomination</button>
+<p id="denominationResult"></p>
 
-document.write("Denominations:<br>");
-for(let i = 0; i < denominations.length; i++){
-    let count = Math.floor(amount / denominations[i]);
-    if(count > 0){
-        document.write(count + " - " + denominations[i] + "'s<br>");
-        amount = amount % denominations[i];
+<script>
+function calculateDenomination() {
+    let amount = parseInt(prompt("Enter amount:"));
+    let denominations = [100,50,20,10,5,2,1];
+    let result = "";
+
+    for(let denom of denominations) {
+        let count = Math.floor(amount / denom);
+        if(count > 0) {
+            result += `${count} - ${denom}'s <br>`;
+            amount %= denom;
+        }
     }
+
+    document.getElementById("denominationResult").innerHTML = result;
 }
 </script>
+</body>
+</html>
